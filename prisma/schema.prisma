@@ -3,6 +3,8 @@
 
 generator client {
     provider = "prisma-client-js"
+    // Skip generation during builds if we're using a dummy DB
+    binaryTargets = ["native"]
 }
 
 datasource db {

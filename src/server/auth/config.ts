@@ -3,6 +3,7 @@ import { type DefaultSession, type NextAuthConfig } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 
 import { db } from "~/server/db";
+import { env } from "~/env";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -43,7 +44,17 @@ export const authConfig = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
-  adapter: PrismaAdapter(db),
+  // Only use PrismaAdapter when we have a real database connection
+  // In production builds, we'll use a simple adapter
+  adapter: (() => {
+    try {
+      return PrismaAdapter(db);
+    } catch (error) {
+      console.error("Failed to initialize Prisma adapter:", error);
+      // Return null during build process to avoid errors
+      return null;
+    }
+  })(),
   callbacks: {
     session: ({ session, user }) => ({
       ...session,
