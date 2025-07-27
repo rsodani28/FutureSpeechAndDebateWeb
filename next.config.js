@@ -2,6 +2,7 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
+process.env.SKIP_ENV_VALIDATION = "1"; // Skip env validation for production build
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
