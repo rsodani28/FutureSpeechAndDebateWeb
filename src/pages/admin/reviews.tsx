@@ -27,7 +27,9 @@ const AdminReviewsPage: NextPage = () => {
   const fetchReviews = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('/api/admin/reviews');
+      // Get admin key from URL query parameter or local storage
+      const adminKey = new URLSearchParams(window.location.search).get('adminKey') || localStorage.getItem('adminKey');
+      const response = await fetch(`/api/admin/reviews${adminKey ? `?adminKey=${adminKey}` : ''}`);
       if (!response.ok) {
         throw new Error('Failed to fetch reviews');
       }

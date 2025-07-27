@@ -1,8 +1,8 @@
-import { PrismaAdapter } from "@auth/prisma-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
-
-import { db } from "~/server/db";
+// Import providers and adapter commented out for initial deployment
+// import { PrismaAdapter } from "@auth/prisma-adapter";
+// import DiscordProvider from "next-auth/providers/discord";
+// import { db } from "~/server/db";
 import { env } from "~/env";
 
 /**
@@ -32,36 +32,26 @@ declare module "next-auth" {
  * @see https://next-auth.js.org/configuration/options
  */
 export const authConfig = {
-  providers: [
-    DiscordProvider,
-    /**
-     * ...add more providers here.
-     *
-     * Most other providers require a bit more work than the Discord provider. For example, the
-     * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
-     * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
-     *
-     * @see https://next-auth.js.org/providers/github
-     */
-  ],
-  // Only use PrismaAdapter when we have a real database connection
-  // In production builds, we'll use a simple adapter
-  adapter: (() => {
-    try {
-      return PrismaAdapter(db);
-    } catch (error) {
-      console.error("Failed to initialize Prisma adapter:", error);
-      // Return null during build process to avoid errors
-      return null;
-    }
-  })(),
+  // Use an empty providers array for initial deployment
+  providers: [],
+  
+  // We're completely disabling the adapter for initial deployment
+  // adapter: PrismaAdapter(db),
+  // Simple callbacks setup for initial deployment
   callbacks: {
-    session: ({ session, user }) => ({
+    // Simplified session callback that doesn't rely on database
+    session: ({ session }) => ({
       ...session,
       user: {
         ...session.user,
-        id: user.id,
+        // Use a placeholder ID since we don't have a real user
+        id: session.user?.email || "anonymous",
       },
     }),
+  },
+  
+  // Add this for deployment to ensure pages don't require authentication
+  pages: {
+    signIn: "/auth/signin",
   },
 } satisfies NextAuthConfig;
