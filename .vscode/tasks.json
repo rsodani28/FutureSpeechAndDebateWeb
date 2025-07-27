@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Development Server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "problemMatcher": ["$tsc"],
+      "isBackground": true,
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Push Prisma Schema",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "db:push"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Open Prisma Studio",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "db:studio"],
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Build Application",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "Start Production Server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "start"],
+      "problemMatcher": [],
+      "isBackground": true
+    }
+  ]
+}
