@@ -53,7 +53,7 @@ export default function Signup() {
                     </div>
                     <div className="ml-3 flex-1">
                       <p className="text-sm text-blue-700">
-                        Registration for both beginner and advanced camps is now open!
+                        Registration for both beginner and advanced camps is closed until next summer!
                       </p>
                     </div>
                   </div>
