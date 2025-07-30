@@ -1,6 +1,5 @@
 import { type NextPage } from "next";
 import { useState } from "react";
-import Layout from "~/components/Layout";
 
 const ReviewsPage: NextPage = () => {
   const [formData, setFormData] = useState({
@@ -25,8 +24,8 @@ const ReviewsPage: NextPage = () => {
       });
       
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to submit review');
+        const errorData = await response.json() as { error?: string };
+        throw new Error(errorData.error ?? 'Failed to submit review');
       }
       
       setSubmissionStatus("success");
@@ -164,7 +163,7 @@ const ReviewsPage: NextPage = () => {
 
           {submissionStatus === "error" && (
             <div className="mt-4 bg-red-50 border border-red-200 text-red-800 rounded-md p-4">
-              {errorMessage || "There was an error submitting your review. Please try again."}
+              {errorMessage ?? "There was an error submitting your review. Please try again."}
             </div>
           )}
         </div>

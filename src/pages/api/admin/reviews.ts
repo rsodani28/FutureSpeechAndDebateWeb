@@ -39,7 +39,7 @@ function writeReviewsToFile(reviews: Review[]) {
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // Simple admin check - uses query parameter as a very basic protection mechanism
   // For production, you would implement proper authentication
-  const adminKey = req.headers['admin-key'] || req.query.adminKey;
+  const adminKey = req.headers['admin-key'] ?? req.query.adminKey;
   if (adminKey !== process.env.ADMIN_KEY && process.env.NODE_ENV === 'production') {
     return res.status(401).json({ error: "Unauthorized" });
   }
@@ -47,7 +47,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // Handle PUT request to approve or reject a review
   if (req.method === "PUT") {
     try {
-      const { id, approved } = req.body;
+      const { id, approved } = req.body as { id: string; approved: boolean };
       
       if (!id) {
         return res.status(400).json({ error: "Review ID is required" });

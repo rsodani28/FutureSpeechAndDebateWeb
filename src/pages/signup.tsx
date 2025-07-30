@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Signup() {
@@ -141,9 +141,9 @@ export default function Signup() {
                   <ul className="list-disc pl-6 space-y-2 text-gray-600">
                     <li>Zelle: Scan the QR code or send to <span className="font-medium">720-755-7705 : Rishabh Sodani</span></li>
                     <li>Cash: Bring payment on the first day of camp</li>
-                    <li>Check: Make payable to "Future Speech & Debate Camp"</li>
+                    <li>Check: Make payable to &quot;Future Speech &amp; Debate Camp&quot;</li>
                   </ul>
-                  <p className="mt-4 text-sm text-gray-500">Please include your child's name and "Speech Camp" in the payment memo/notes.</p>
+                  <p className="mt-4 text-sm text-gray-500">Please include your child&apos;s name and &quot;Speech Camp&quot; in the payment memo/notes.</p>
                 </div>
                 <div className="w-full md:w-1/2 flex justify-center">
                   {isQRExpanded && (
@@ -154,9 +154,11 @@ export default function Signup() {
                   )}
                   <div className={`relative bg-white p-4 rounded-lg shadow-sm border border-gray-200 ${isQRExpanded ? "fixed inset-0 z-50 flex flex-col items-center justify-center" : ""}`}>
                     <div className={`text-center mb-2 font-medium text-gray-700 ${isQRExpanded ? "text-xl" : ""}`}>Zelle QR Code</div>
-                    <img 
+                    <Image 
                       src="/ZelleQR.jpg" 
-                      alt="Zelle QR Code for payment" 
+                      alt="Zelle QR Code for payment"
+                      width={isQRExpanded ? 600 : 192}
+                      height={isQRExpanded ? 600 : 192}
                       className={`object-contain mx-auto transition-all duration-300 ${isQRExpanded ? "w-auto h-auto max-w-[90vw] max-h-[70vh]" : "w-48 h-48"}`}
                     />
                     <div className={`text-center mt-2 text-sm text-gray-600 ${isQRExpanded ? "text-base max-w-md" : ""}`}>

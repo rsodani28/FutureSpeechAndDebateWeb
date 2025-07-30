@@ -160,7 +160,7 @@ export default function Past() {
           
           <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
             <p className="text-gray-700 mb-4 leading-relaxed">
-              We started this summer camp to help prepare the next generation of future speech & debaters get ready when it's their time to compete. 
+              We started this summer camp to help prepare the next generation of future speech & debaters get ready when it&apos;s their time to compete. 
               Throughout this past year, we have learned many tips and tricks for all forms of debate and have gathered lots of advice given from upperclassmen.
             </p>
             <p className="text-gray-700 mb-4 leading-relaxed">

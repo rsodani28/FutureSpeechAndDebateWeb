@@ -66,7 +66,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // Handle POST request to create a new review
   if (req.method === "POST") {
     try {
-      const { parentName, studentName, rating, comment } = req.body;
+      const { parentName, studentName, rating, comment } = req.body as {
+        parentName: string;
+        studentName: string;
+        rating: number | string;
+        comment: string;
+      };
       
       // Validate required fields
       if (!parentName || !studentName || !rating || !comment) {

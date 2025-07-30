@@ -16,7 +16,7 @@ export default function Home() {
         if (!response.ok) {
           throw new Error('Failed to fetch reviews');
         }
-        const data = await response.json();
+        const data = await response.json() as Review[];
         setReviews(data);
       } catch (error) {
         console.error('Error fetching reviews:', error);
@@ -75,7 +75,7 @@ export default function Home() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Camp?</h2>
           <p className="max-w-xl mx-auto text-gray-600">
-            Our camp isn't just about winning arguments — it's about helping kids find their voice, speak with purpose, and think on their feet.
+            Our camp isn&apos;t just about winning arguments — it&apos;s about helping kids find their voice, speak with purpose, and think on their feet.
           </p>
         </div>
         
@@ -133,7 +133,7 @@ export default function Home() {
               In just 1-2 weeks of your summer, your child, if signed up for our Speech & Debate Camp, will learn all of the necessary skills used not only in speech and debate, but also in real world situations that require communication.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Taught by accomplished students who have gone through the process (and succeeded by qualifying for Nationals), this camp is sure to ignite your child's confidence and curiosity. With engaging activities, personalized feedback, and real-world applications, our camp helps kids find their voice and speak with purpose.
+              Taught by accomplished students who have gone through the process (and succeeded by qualifying for Nationals), this camp is sure to ignite your child&apos;s confidence and curiosity. With engaging activities, personalized feedback, and real-world applications, our camp helps kids find their voice and speak with purpose.
             </p>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function Home() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Parent Testimonials</h2>
           <p className="max-w-xl mx-auto text-gray-600 mb-8">
-            Here's what parents had to say about our camp
+            Here&apos;s what parents had to say about our camp
           </p>
         </div>
         

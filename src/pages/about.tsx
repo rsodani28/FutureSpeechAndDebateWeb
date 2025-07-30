@@ -123,9 +123,11 @@ export default function About() {
           
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <div className="w-32 h-32 rounded-full bg-indigo-100 mx-auto mb-4 overflow-hidden">
-              <img 
+              <Image 
                 src="/VivaanPic.jpg" 
                 alt="Vivaan Lal" 
+                width={128}
+                height={128}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -142,9 +144,11 @@ export default function About() {
           
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <div className="w-32 h-32 rounded-full bg-indigo-100 mx-auto mb-4 overflow-hidden">
-              <img 
+              <Image 
                 src="/FormalPic.jpg" 
                 alt="Rishabh Sodani" 
+                width={128}
+                height={128}
                 className="w-full h-full object-cover"
               />
             </div>
