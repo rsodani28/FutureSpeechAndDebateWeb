@@ -14,7 +14,7 @@ export default function About() {
           <div className="flex-1">
             <h1 className="text-4xl font-bold mb-4 text-gray-900">About Our Camp</h1>
             <p className="text-lg text-gray-600 mb-6">
-              Founded by rising juniors from Cherry Creek High School, our mission is to prepare 
+              Founded by rising seniors from Cherry Creek High School, our mission is to prepare
               the next generation of debaters for success.
             </p>
             <p className="text-gray-600">
@@ -23,11 +23,13 @@ export default function About() {
               and instill unwavering confidence in every participant.
             </p>
           </div>
-          <div className="flex-1 bg-gray-200 h-64 rounded-lg overflow-hidden relative">
-            {/* Replace with your actual image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600 to-purple-500 opacity-90 flex items-center justify-center text-white text-xl font-bold p-4 text-center">
-              Future Speech & Debate Camp Instructors
-            </div>
+          <div className="flex-1 h-64 rounded-lg overflow-hidden relative">
+            <Image
+              src="/teamPic.jpeg"
+              alt="Future Speech & Debate Camp Instructors"
+              fill
+              className="object-cover object-top"
+            />
           </div>
         </div>
       </section>
@@ -37,7 +39,7 @@ export default function About() {
         <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Us?</h2>
         <div className="bg-white p-8 rounded-lg shadow-sm">
           <p className="text-gray-600 mb-4">
-            Welcome to our Speech & Debate Camp! Founded by rising juniors Eric Chen, Vivaan Lal, and Rishabh Sodani 
+            Welcome to our Speech & Debate Camp! Founded by rising seniors Eric Chen, Vivaan Lal, and Rishabh Sodani
             from Cherry Creek High School, our mission is to prepare the next generation of debaters for success.
           </p>
           <p className="text-gray-600 mb-4">
@@ -104,13 +106,17 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <div className="w-32 h-32 rounded-full bg-indigo-100 mx-auto mb-4 overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-tr from-indigo-400 to-blue-500 flex items-center justify-center text-white font-bold">
-                Eric
-              </div>
+              <Image
+                src="/ericPic.jpeg"
+                alt="Eric Chen"
+                width={128}
+                height={128}
+                className="w-full h-full object-cover object-top"
+              />
             </div>
             <h3 className="text-xl font-semibold text-center text-gray-900 mb-2">Eric Chen</h3>
             <p className="text-gray-600 mb-4">
-              Eric is a rising junior at Cherry Creek High School who has earned the Special distinction rank by the NSDA. 
+              Eric is a rising senior at Cherry Creek High School who has earned the Special distinction rank by the NSDA. 
               He is recognized as a CHSAA State Semifinalist and has qualified for the NSDA National Tournament in two events: 
               Congress and Public Forum.
             </p>
@@ -133,7 +139,7 @@ export default function About() {
             </div>
             <h3 className="text-xl font-semibold text-center text-gray-900 mb-2">Vivaan Lal</h3>
             <p className="text-gray-600 mb-4">
-              Vivaan is a rising junior at Cherry Creek High School. He currently holds the Distinction Rank and is a current 
+              Vivaan is a rising senior at Cherry Creek High School. He currently holds the Distinction Rank and is a current 
               speech district champion at Cherry Creek High School.
             </p>
             <p className="text-gray-600">
@@ -154,7 +160,7 @@ export default function About() {
             </div>
             <h3 className="text-xl font-semibold text-center text-gray-900 mb-2">Rishabh Sodani</h3>
             <p className="text-gray-600 mb-4">
-              Rishabh is a rising junior at Cherry Creek High School. Rishabh currently has over 575 NSDA points, one of the 
+              Rishabh is a rising senior at Cherry Creek High School. Rishabh currently has over 575 NSDA points, one of the 
               highest in the Class of 2027, and has earned the Special Distinction Rank.
             </p>
             <p className="text-gray-600">
@@ -177,8 +183,8 @@ export default function About() {
               <p className="text-gray-700 mb-2"><strong>Where:</strong> Koelbel Library (Arapahoe Libraries)</p>
               <p className="text-gray-700 mb-2"><strong>Address:</strong> 5955 S Holly St, Centennial, CO 80121</p>
               <p className="text-gray-700 mb-2"><strong>When:</strong> 9AM - 12PM daily</p>
-              <p className="text-gray-700 mb-2"><strong>Beginner Camp:</strong> July 14th-18th</p>
-              <p className="text-gray-700"><strong>Advanced Camp:</strong> July 21st-25th</p>
+              <p className="text-gray-700 mb-2"><strong>Beginner Camp:</strong> TBD</p>
+              <p className="text-gray-700"><strong>Advanced Camp:</strong> TBD</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm">

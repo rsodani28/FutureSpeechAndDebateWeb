@@ -58,7 +58,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-4 text-sm text-indigo-600 font-semibold">
-            <p>Beginner: July 14th-18th | Advanced: July 21st-25th</p>
+            <p>Beginner: TBD | Advanced: TBD</p>
             <p>9AM - 12PM @ Koelbel Library</p>
           </div>
         </div>
@@ -164,11 +164,11 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
               <p className="font-bold mb-1">Beginner Camp</p>
-              <p>July 14th-18th, 9AM-12PM</p>
+              <p>TBD, 9AM-12PM</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
               <p className="font-bold mb-1">Advanced Camp</p>
-              <p>July 21st-25th, 9AM-12PM</p>
+              <p>TBD, 9AM-12PM</p>
             </div>
           </div>
           <div className="mt-8">
